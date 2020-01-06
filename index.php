@@ -11,7 +11,7 @@ use Fruits\Grape;
 use Fruits\NoneFruit;
 
 $fruitName = getFruitNameByUrlPath();
-$fruitData = setFruitData($fruitName);
+$fruitData = getFruitData($fruitName);
 
 function getFruitNameByUrlPath(){
     if(!isset($_GET['fruit'])){
@@ -20,7 +20,7 @@ function getFruitNameByUrlPath(){
     return $_GET['fruit'];
 }
 
-function setFruitData($fruitName){
+function getFruitData($fruitName){
     $fruit = getFruitInstance($fruitName);
     $fruitContext = new Fruit($fruit);
     return $fruitContext->execute();
